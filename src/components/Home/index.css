@@ -1,0 +1,26 @@
+
+.post-element-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.user-details-elements-container{
+    list-style-type: none;
+    padding: 0px;
+}
+
+
+.post-btn{
+    background-color:#094099;
+    border-style: none;
+    color:#ebeff5;
+    border-radius: 5px;
+    width: 60px;
+    height: 20px;
+}
+
+.home-page-main-container{
+    padding: 20px;
+}
