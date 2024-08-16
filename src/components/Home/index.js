@@ -14,7 +14,8 @@ class Home extends Component{
     }
 
     getUserDetails = async () => {
-        const url = "http://localhost:3001"
+        const url = "https://crudbackend-wsrv.onrender.com"
+        // const url = "http://localhost:3001"
         const response = await fetch(url)
         const data = await response.json()
         console.log(data)
@@ -43,7 +44,9 @@ class Home extends Component{
 
         }
 
-        const url = "http://localhost:3001"
+        const url = "https://crudbackend-wsrv.onrender.com"
+
+        // const url = "http://localhost:3001"
         const  options  = {
             method : "POST",
             headers : {
