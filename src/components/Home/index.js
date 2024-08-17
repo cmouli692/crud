@@ -58,9 +58,13 @@ class Home extends Component{
         fetch(url,options)
         .then(response => response.json())
         .then(data => console.log(data),
-        this.setState({username : "", password : ""},this.getUserDetails())
+        this.setState({username : "", password : ""})
+       
     )
         .catch(err => console.error("Error:",err))
+
+
+        this.getUserDetails()
 
        
 
