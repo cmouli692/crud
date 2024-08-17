@@ -5,7 +5,7 @@ import "./index.css"
 
 class Home extends Component{
 
-    state = {userDetails : {},username : "" , password : "" ,userDetailsList : []}
+    state = {userDetails : {}, username : "" , password : "" ,userDetailsList : []}
 
     componentDidMount(){
 
@@ -22,7 +22,7 @@ class Home extends Component{
         const data = await response.json()
         console.log(data)
 
-        this.setState((prevState) => (
+       await this.setState((prevState) => (
             {userDetailsList : [...prevState.userDetailsList,...data]}
         ))
     }
