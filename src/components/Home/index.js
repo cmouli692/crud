@@ -118,6 +118,7 @@ class Home extends Component{
     }
 
     render(){
+        this.getUserDetails()
         return(
             <div className="home-page-main-container">
                 <h1>POST METHOD</h1>
