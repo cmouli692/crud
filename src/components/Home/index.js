@@ -7,13 +7,13 @@ class Home extends Component{
 
     state = {userDetails : {},username : "" , password : "" ,userDetailsList : []}
 
-    componentDidMount(){
+    // componentDidMount(){
 
-        console.log("component mounted")
+    //     console.log("component mounted")
 
-        this.getUserDetails()
+    //     this.getUserDetails()
        
-    }
+    // }
 
     getUserDetails = async () => {
         const url = "https://crudbackend-wsrv.onrender.com"
