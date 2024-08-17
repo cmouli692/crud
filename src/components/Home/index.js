@@ -76,14 +76,14 @@ class Home extends Component{
             <div className="username-container"> 
                <label htmlFor="username">USERNAME</label>
                <br/>
-               <input id="username" type="text" onChange={this.onChangeUsername} value={username}/> 
+               <input id="username" type="text" onChange={this.onChangeUsername} value={username} required/> 
             </div>
             
             
             <div className="password-container">
                 <label htmlFor="password" >PASSWORD</label>
                 <br/>
-                <input id ="password" type ="password" onChange={this.onChangePassword} value={password}/> 
+                <input id ="password" type ="password" onChange={this.onChangePassword} value={password} required/> 
             </div>
             <div className="button-container">
                 <button type="submit" className="post-btn">Post</button>
