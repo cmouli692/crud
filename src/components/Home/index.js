@@ -1,11 +1,12 @@
 import {v4 as uuidv4} from "uuid"
+import { Audio } from 'react-loader-spinner'
 
 import {Component} from "react"
 import "./index.css"
 
 class Home extends Component{
 
-    state = {userDetails : {}, username : "" , password : "" ,userDetailsList : []}
+    state = {userDetails : {}, username : "" , password : "" ,userDetailsList : [] , isLoading : false}
 
     componentDidMount(){
 
@@ -16,6 +17,8 @@ class Home extends Component{
     }
 
     getUserDetails = async () => {
+
+        this.setState({isLoading : true})
         const url = "https://crudbackend-wsrv.onrender.com"
         // const url = "http://localhost:3001"
         const response = await fetch(url)
@@ -23,7 +26,7 @@ class Home extends Component{
         console.log(data)
 
         await this.setState((prevState) => (
-            {userDetailsList : [...prevState.userDetailsList,...data]}
+            {userDetailsList : [...prevState.userDetailsList,...data],isLoading :false}
         ))
     }
 
@@ -123,12 +126,26 @@ class Home extends Component{
         </ul>)
     }
 
+    renderLoadingContainer = () => {
+        <Audio
+  height="80"
+  width="80"
+  radius="9"
+  color="green"
+  ariaLabel="loading"
+  wrapperStyle
+  wrapperClass
+/>
+
+    }
+
     render(){
+        const {isLoading} = this.state
         return(
             <div className="home-page-main-container">
                 <h1>POST METHOD</h1>
                 {this.formContainer()} 
-                {this.postDetailElementsContainer()} 
+                {isLoading ? this.renderLoadingContainer() :this.postDetailElementsContainer()}
             </div>
         )
     }
