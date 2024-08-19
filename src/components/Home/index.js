@@ -7,7 +7,7 @@ class Home extends Component{
 
     state = {userDetails : {}, username : "" , password : "" ,userDetailsList : []}
 
-    componentDidMount(){
+    componentDidUpdate(){
 
         console.log("component mounted")
 
