@@ -7,13 +7,13 @@ class Home extends Component{
 
     state = {userDetails : {}, username : "" , password : "" ,userDetailsList : []}
 
-    componentDidMount(){
+    // componentDidMount(){
 
-        console.log("component mounted")
+    //     console.log("component mounted")
 
-        this.getUserDetails()
+    //     this.getUserDetails()
        
-    }
+    // }
 
     getUserDetails = async () => {
         const url = "https://crudbackend-wsrv.onrender.com"
@@ -22,7 +22,7 @@ class Home extends Component{
         const data = await response.json()
         console.log(data)
 
-       await this.setState((prevState) => (
+        await this.setState((prevState) => (
             {userDetailsList : [...prevState.userDetailsList,...data]}
         ))
     }
@@ -101,6 +101,7 @@ class Home extends Component{
     }
 
     postDetailElementsContainer = () => {
+        this.getUserDetails()
         const {userDetailsList} = this.state 
        return( <ul className="user-details-elements-container">
 
