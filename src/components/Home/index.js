@@ -36,7 +36,7 @@ class Home extends Component{
         this.setState({password : e.target.value})
     }
 
-    onSubmitForm = (e) => {
+    onSubmitForm = async(e) => {
         e.preventDefault()
         const {username,password } = this.state
         const userObject = {
@@ -61,7 +61,7 @@ class Home extends Component{
         .then(response => response.json())
         .then(data => console.log(data))
         .then(this.setState({username : "", password : ""}))
-        .then(this.getUserDetails())
+        .then( await this.getUserDetails())
         .catch(err => console.error("Error:",err))
 
 
