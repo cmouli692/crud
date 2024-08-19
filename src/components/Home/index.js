@@ -57,12 +57,15 @@ class Home extends Component{
             body : JSON.stringify(userObject)
         }
 
-        fetch(url,options)
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .then(this.setState({username : "", password : ""}))
-        .then( await this.getUserDetails())
-        .catch(err => console.error("Error:",err))
+        const response = await fetch(url,options)
+        const data = await response.json()
+        
+        
+      
+
+        this.setState((prevState) => ( {
+            userDetailsList: [...prevState.userDetailsList, ...data]
+        }))
 
 
         
