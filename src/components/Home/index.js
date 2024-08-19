@@ -26,8 +26,9 @@ class Home extends Component{
         console.log(data)
 
         await this.setState((prevState) => (
-            {userDetailsList : [...prevState.userDetailsList,...data],isLoading :false}
+            {userDetailsList : [...prevState.userDetailsList,...data]}
         ))
+        this.setState({isLoading : false})
     }
 
     onChangeUsername = (e) => {
@@ -128,14 +129,14 @@ class Home extends Component{
 
     renderLoadingContainer = () => {
         <Audio
-  height="80"
-  width="80"
-  radius="9"
-  color="green"
-  ariaLabel="loading"
-  wrapperStyle
-  wrapperClass
-/>
+            height="80"
+            width="80"
+            radius="9"
+            color="green"
+            ariaLabel="loading"
+            wrapperStyle
+            wrapperClass
+        />
 
     }
 
